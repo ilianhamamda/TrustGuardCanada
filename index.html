@@ -3,45 +3,483 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TrustGuardCanada</title>
+  <title>TrustGuard Canada | Vehicle Inspection Services</title>
+  <meta
+    name="description"
+    content="TrustGuard Canada helps buyers make smarter vehicle purchases with detailed inspections, diagnostic scans, and honest reporting."
+  />
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      color: #111;
+      padding: 0;
     }
-    .wrap {
-      max-width: 900px;
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f8fb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
       margin: 0 auto;
-      padding: 80px 24px;
-      text-align: center;
     }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #374151;
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      background: linear-gradient(to bottom, #ffffff, #f6f8fb);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
     h1 {
-      font-size: 48px;
-      margin-bottom: 16px;
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      color: #0f172a;
     }
-    p {
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 32px;
+
+    .hero p {
+      font-size: 1.08rem;
+      color: #4b5563;
+      margin-bottom: 26px;
+      max-width: 650px;
     }
+
+    .btn-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
     .btn {
       display: inline-block;
       padding: 14px 22px;
       border-radius: 10px;
-      background: #111;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #2563eb;
       color: #fff;
-      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #111827;
+      border: 1px solid #d1d5db;
+    }
+
+    .btn-secondary:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+
+    .hero-card,
+    .section-card,
+    .contact-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+    }
+
+    .hero-card h3,
+    .section-card h3,
+    .contact-card h3 {
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+      color: #0f172a;
+    }
+
+    .hero-card ul,
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-card li,
+    .check-list li {
+      position: relative;
+      padding-left: 20px;
+      color: #4b5563;
+    }
+
+    .hero-card li::before,
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #0f172a;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #6b7280;
+      max-width: 700px;
+      margin: 0 auto 42px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .section-card p,
+    .contact-card p {
+      color: #6b7280;
+    }
+
+    .cta {
+      background: #0f172a;
+      color: #fff;
+      border-radius: 22px;
+      padding: 44px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+
+    .contact-row {
+      margin-bottom: 16px;
+    }
+
+    .contact-row strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #111827;
+    }
+
+    .contact-row a,
+    .contact-row span {
+      color: #6b7280;
+    }
+
+    footer {
+      padding: 30px 0 45px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-top: 60px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      .section-title {
+        font-size: 1.65rem;
+      }
+
+      .cta {
+        padding: 30px 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>TrustGuardCanada</h1>
-    <p>We protect buyers from bad deals.
-Fast, independent reports that expose risks before you spend your money.</p>
-    <a class="btn" href="mailto:ilianhamamda@gmail.com">Contact Me</a>
-  </div>
+  <header>
+    <div class="container nav">
+      <div class="logo">TrustGuard <span>Canada</span></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+        <a href="booking.html">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="tag">Pre-Purchase Vehicle Inspection</div>
+        <h1>We help you avoid bad vehicle deals before you buy.</h1>
+        <p>
+          TrustGuard Canada is a vehicle inspection service focused on helping buyers
+          make smart decisions. Me personally with my team, we inspect vehicles in detail,
+          scan them with a special diagnostic device, and check everything we possibly can
+          from tires to engine state.
+        </p>
+
+        <div class="btn-group">
+          <a href="booking.html" class="btn btn-primary">Book an Inspection</a>
+          <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>What we look for</h3>
+        <ul>
+          <li>Fault codes and hidden warning signs</li>
+          <li>Tire condition and wear patterns</li>
+          <li>Engine state and visible leaks</li>
+          <li>Brake, battery, and electronic issues</li>
+          <li>Visible damage and signs of neglect</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Who We Are</h2>
+      <p class="section-subtitle">
+        We are a Canadian vehicle inspection service built to protect buyers from hidden problems,
+        expensive repairs, and risky purchases.
+      </p>
+
+      <div class="grid-2">
+        <div class="section-card">
+          <h3>Our mission</h3>
+          <p>
+            At TrustGuard Canada, our mission is to give buyers real clarity before they commit
+            to purchasing a vehicle. We believe people should know exactly what they are paying for.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h3>Our approach</h3>
+          <p>
+            We combine hands-on inspection with diagnostic scanning to uncover the issues that can
+            be missed during a normal walkthrough. We focus on truth, detail, and clear feedback.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">What We Do</h2>
+      <p class="section-subtitle">
+        We inspect used vehicles before purchase so you can avoid hidden issues and make better decisions.
+      </p>
+
+      <div class="grid-3">
+        <div class="section-card">
+          <h3>Diagnostic Scan</h3>
+          <p>
+            We scan the vehicle with a special device to check for codes, system faults,
+            hidden warnings, and electronic problems.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h3>Physical Inspection</h3>
+          <p>
+            We inspect everything we reasonably can, including tires, brakes, engine state,
+            visible wear, leaks, and signs of damage or neglect.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h3>Honest Feedback</h3>
+          <p>
+            We tell you what we find in simple language so you understand the condition of the
+            vehicle before spending your money.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">How We Do It</h2>
+      <p class="section-subtitle">
+        Our process is simple, serious, and built to protect the buyer.
+      </p>
+
+      <div class="grid-2">
+        <div class="section-card">
+          <h3>Inspection process</h3>
+          <ul class="check-list">
+            <li>Review the vehicle visually</li>
+            <li>Run a diagnostic scan</li>
+            <li>Check major mechanical and visible condition points</li>
+            <li>Look for warning signs and costly issues</li>
+            <li>Explain findings clearly and honestly</li>
+          </ul>
+        </div>
+
+        <div class="section-card">
+          <h3>Why it matters</h3>
+          <p>
+            Many vehicles look good on the surface but hide expensive problems. Our inspections
+            help you negotiate better, avoid risky buys, or walk away before losing money.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta">
+        <h2>Protect yourself before you buy.</h2>
+        <p>
+          Get a clear picture of the vehicle’s real condition before committing to the purchase.
+        </p>
+        <a href="booking.html" class="btn btn-primary">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Quick Contact</h2>
+      <p class="section-subtitle">
+        Reach out directly for questions, bookings, or more details.
+      </p>
+
+      <div class="grid-2">
+        <div class="contact-card">
+          <h3>Call Us</h3>
+          <div class="contact-row">
+            <strong>Phone</strong>
+            <a href="tel:2042960224">204-296-0224</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Email Us</h3>
+          <div class="contact-row">
+            <strong>Email</strong>
+            <a href="mailto:ilianhamamda@gmail.com">ilianhamamda@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 TrustGuard Canada. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>

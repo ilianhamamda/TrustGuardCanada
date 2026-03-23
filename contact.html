@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrustGuard Canada | Contact</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f8fb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      padding: 80px 0 30px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 14px;
+      color: #0f172a;
+    }
+
+    .hero p {
+      color: #6b7280;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      padding: 40px 0 80px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+    }
+
+    .card h2 {
+      margin-bottom: 16px;
+      color: #0f172a;
+    }
+
+    .row {
+      margin-bottom: 18px;
+    }
+
+    .row strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #111827;
+    }
+
+    .row a,
+    .row span {
+      color: #6b7280;
+      word-break: break-word;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: #2563eb;
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .cta-btn:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      padding: 30px 0 45px;
+    }
+
+    @media (max-width: 800px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">TrustGuard <span>Canada</span></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+        <a href="booking.html">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Contact TrustGuard Canada</h1>
+      <p>
+        Reach out directly to ask questions, get pricing details, or schedule your inspection.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="card">
+          <h2>Call Us</h2>
+          <div class="row">
+            <strong>Phone</strong>
+            <a href="tel:2042960224">204-296-0224</a>
+          </div>
+          <div class="row">
+            <strong>Availability</strong>
+            <span>Contact us for booking and inspection questions.</span>
+          </div>
+          <a href="tel:2042960224" class="cta-btn">Call Now</a>
+        </div>
+
+        <div class="card">
+          <h2>Email Us</h2>
+          <div class="row">
+            <strong>Email</strong>
+            <a href="mailto:ilianhamamda@gmail.com">ilianhamamda@gmail.com</a>
+          </div>
+          <div class="row">
+            <strong>Best for</strong>
+            <span>Send vehicle details, location, and preferred booking time.</span>
+          </div>
+          <a href="mailto:ilianhamamda@gmail.com" class="cta-btn">Email Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 TrustGuard Canada. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
